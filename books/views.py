@@ -1,9 +1,11 @@
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated
 from .models import Book, Transaction
 from .serializers import BookSerializer, TransactionSerializer
+from rest_framework.permissions import AllowAny
+from rest_framework.decorators import permission_classes
+from rest_framework.permissions import IsAuthenticated
 
-
+@permission_classes([AllowAny])
 class BookListCreateView(generics.ListCreateAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
