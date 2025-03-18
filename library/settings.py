@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     "books",
     "rest_framework.authtoken",
+    "django_extensions",
 ]
 
 REST_FRAMEWORK = {
